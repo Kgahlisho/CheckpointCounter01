@@ -2,50 +2,45 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title> Counter </title>
-    <link rel="stylesheet" href="Projecttone.css">
-
-
+    <title>Counter</title>
+    <link rel="stylesheet" href="Projecttone.css" />
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 </head>
-
-
-
-<!---Create a increment with the id="inctrement-btn"-->
-
-<!--Create a save button ,
-set the if to save-btn and 
-call the save() function when its clicked-->
-
-
 
 <body>
 
-    <div class="container">
-        <h1>People entered : </h1>
-        <h2 id="count-el"> 0 </h2>
+    <button id="theme-toggle" aria-label="Toggle theme">
+        <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+
+    <div class="container" id="main-container">
+       
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+
+        <h1>People entered</h1>
+        <h2 id="count-el">0</h2>
 
         <div class="button-group">
-            <button id="increment-btn" onclick=" increment() "> Add </button>
-            <button id="save-btn" onclick=" save() "> Save </button>
+            <button id="increment-btn" onclick="increment()"> Add</button>
+            <button id="save-btn" onclick="save()">Save</button>
         </div>
-
 
         <div id="save-el">
-            <span class="entry-label"> Previous entries: </span>
-            <span id="entries-display"> -> </span>
+            <span class="entry-label">Previous entries:</span>
+            <span id="entries-display">—</span>
         </div>
-
 
         <div id="total-el">
-            <span class="entry-label"> Total people : </span>
-            <span id="entries-display"> -> </span>
+            <span class="entry-label">Total people :</span>
+            <span id="entries-display">—</span>
         </div>
     </div>
-
 
     <script src="Projecttone.js"></script>
 
