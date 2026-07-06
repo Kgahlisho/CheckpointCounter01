@@ -1,28 +1,55 @@
-document.addEventListener("DOMContentLoaded", function() {
 
-let saveEl = document.getElementById("save-el");
-let countEl = document.getElementById("count-el");
-let count = 0;
+(function() {
+    "use strict";
 
-function increment(){
+    const countEl = document.getElementById('count-el');
+    const entriesDisplay = document.getElementById('entries-display');
 
-    count += 1;
-    countEl.innerText = count;
+    let count = 0;
+    let history = [];  
+    const MAX_HISTORY = 30;
+
+    function renderCount() {
+        countEl.innerText = count;
+    }
+
+    function renderHistory() {
+        if (history.length === 0) {
+            entriesDisplay.innerText = '—';
+            return;
+        }
     
-}
+        const displayArr = history.slice(-MAX_HISTORY);
+        entriesDisplay.innerText = displayArr.join(' · ');
+    }
 
-function save(){
+    function increment() {
+        count += 1;
+        renderCount();
+    }
 
-let countStr = count + " - ";
-saveEl.innerText += countStr;
+    function save() {
+    
+        history.push(String(count));
 
+        count = 0;
+        renderCount();
 
-countEl.innerText = 0 ;
-count = 0;
+        renderHistory();
 
-}
+        if (history.length > MAX_HISTORY * 1.5) {
+            history = history.slice(-MAX_HISTORY);
+        }
+    }
 
-document.getElementById("increment-btn").addEventListener("click",increment);
-document.getElementById("save-btn").addEventListener("click",save);
+    const incBtn = document.getElementById('increment-btn');
+    const savBtn = document.getElementById('save-btn');
 
-});
+    if (incBtn) incBtn.addEventListener('click', increment);
+    if (savBtn) savBtn.addEventListener('click', save);
+
+    renderCount();
+    renderHistory();
+
+    console.log('✅ zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzPeople Counter ready (separate files)');
+})();

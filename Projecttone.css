@@ -1,25 +1,45 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
 body{
     background-image: url(galleryevents.jpg);
-    background-size: cover;
+     background-size: cover;
+    background-color: #1e2a36;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
     text-align: center;
-height:100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem;
 
 }
 
 .container{
 
-    background: white;
-    max-width: 80%;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(2px);
+    max-width: 500px;
+    width: 100%;
     margin: auto;
-    border:  3px solid black;
-border-radius: 10px;
+    border: 3px solid #1e2a36;
+    border-radius: 28px;
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: 0.2s;
 }
 
 h1{
 margin-top: 10px;
 margin-bottom: 10px;
+font-size:1.9rem;
+letter-spacing: 1px;
+color:#1e2a36;
+font-weight:700;
 
 }
 
@@ -27,27 +47,102 @@ h2{
     font-size: 50px;
     margin-top: 0;
     margin-bottom: 20px;
+     color: #0b1a2a;
+    background: #eef3f7;
+    display: inline-block;
+    padding: 0.1rem 1.8rem;
+    border-radius: 60px;
+    min-width: 120px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin: 1.2rem 0 0.8rem 0;
 }
 
 button {
 
     border: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 0.9rem 0.5rem;
     color: white;
-    font-weight: bold;
-    width: 200px;
-    margin-bottom: 5px;
-    border-radius: 5px ;
+    font-weight: 700;
+    font-size: 1.3rem;
+    width: 170px;
+    border-radius: 60px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.08s ease;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-#increment-btn
-{
-    background: darkred;
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-#save-btn
-{
-    background:darkgreen;
+#increment-btn {
+    background: #a11f2c;
+    background: linear-gradient(145deg, #b02b3a, #871a26);
 }
 
+#increment-btn:hover {
+    background: #c13041;
+}
+
+
+#save-btn {
+    background: #1f6d3b;
+    background: linear-gradient(145deg, #2b8a4a, #1a5a30);
+}
+
+#save-btn:hover {
+    background: #328f4e;
+}
+
+
+#save-el {
+    margin-top: 1.8rem;
+    font-size: 1.3rem;
+    background: #e8edf2;
+    padding: 0.9rem 1rem;
+    border-radius: 50px;
+    color: #13212e;
+    border: 2px solid #bcc9d4;
+    min-height: 5rem;
+    word-break: break-word;
+    background: #f4f8fc;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.03);
+    font-weight: 600;
+}
+
+.entry-label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.3px;
+}
+
+#entries-display {
+    display: block;
+    margin-top: 0.3rem;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    button {
+        width: 140px;
+        font-size: 1.1rem;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+}

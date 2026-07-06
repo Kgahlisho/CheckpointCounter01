@@ -1,11 +1,15 @@
-<html>
-<head>
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <title> Counter </title>
+        <link rel="stylesheet" href="Projecttone.css">
 
-<link rel="stylesheet" href="Projecttone.css">
-<title> Counter </title>
-<script src="Projecttone.js"></script>
 
-</head>
+    </head>
 
 
 
@@ -22,16 +26,22 @@ call the save() function when its clicked-->
     <div class="container">
     <h1>People enterd : </h1>
     <h2 id= "count-el" > 0 </h2>
+
+    <div class = "button-group">
         <button id= "increment-btn" onclick = " increment() " > Increment </button>        
         <button id= "save-btn" onclick= " save() " > Save </button>
+    </div>
 
-        <p id= "save-el" > Previous entries: </p>
+
+        <div id= "save-el" >
+            <span class="entry-label"> Previous entries: </span>
+            <span id = "entries-display" > -> </span>
         </div>
+    </div>
         
 
+    <script src="Projecttone.js"></script>
+
     </body>
-
-
-
-
-    <html>
+    
+</html>
