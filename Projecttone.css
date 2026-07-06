@@ -159,18 +159,22 @@ button:active {
     .container {
         padding: 1.5rem 1rem;
     }
+
     button {
         width: 140px;
         font-size: 1.1rem;
     }
+
     h1 {
         font-size: 1.6rem;
     }
+
     h2 {
         font-size: 40px;
         padding: 0.1rem 1.2rem;
         min-width: 90px;
     }
+
     #save-el,
     #total-el {
         font-size: 1.1rem;
